@@ -1,0 +1,5 @@
+1. if user refresh then data is not stored means  useEffect with [] dependency is not working as expected which is defined in AuthContext
+
+// i am able to get the reason if I use <Navigate> then it's not rendering privateRoute again (after calling setUser() ) but if I use navigate() hook then it's rendering privateRoute again (after calling setUser()) i don't know reason
+
+2.when user start uploading one video then upload button should be disabled till video is not completely uploaded

@@ -35,6 +35,7 @@ export default function Login() {
         try {
             setError('');
             let user = await store.login(email, password);
+            //console.log(user);
             navigate('/Feed');
         } catch (e) {
             setError('user not found');
@@ -43,6 +44,7 @@ export default function Login() {
     }
     return (
         <>
+            <Link to='/Feed'> feed </Link>
             <div className="loginWrapper">
                 {/* <div className="imgcar" style={{ backgroundImage: 'url(' + bg + ')', backgroundSize: 'cover' }}>
                     <div className="car">

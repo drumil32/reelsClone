@@ -13,7 +13,7 @@ import { AuthContext } from './../context/AuthContext';
 
 import './SignUp.css';
 
-export default function ActionAreaCard() {
+export default function SignUp() {
     const navigate = useNavigate();
     const store = React.useContext(AuthContext);
     const [email, setEmail] = React.useState('');
@@ -24,7 +24,7 @@ export default function ActionAreaCard() {
     const [loading,setLoading] = React.useState(false);
 
     const signUpHelper =async () => {
-        console.log(file);
+        //console.log(file);
         if( null===file ){
             setError('please upload your prfile image');
             return;
@@ -34,7 +34,7 @@ export default function ActionAreaCard() {
             setLoading(true);
             let userObj = await store.signUp(email, password);
             await store.upload(file,userObj.user.uid,name,email);
-
+            setLoading(false);
             navigate('/Feed');
         }catch(e){
             setLoading(false);

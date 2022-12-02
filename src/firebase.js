@@ -26,6 +26,7 @@ const firestore = firebase.firestore();
 // why export one database
 export const database = {
     users: firestore.collection("users"),
+    posts : firestore.collection("posts"),
     getTimeStamp : firebase.firestore.FieldValue.serverTimestamp
 };
 
